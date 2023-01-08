@@ -1,3 +1,4 @@
+console.log("My JavaScript file is linked.")
 // Array of special characters to be included in password
 var specialCharacters = [
   '@',
