@@ -1,4 +1,4 @@
-console.log("My JavaScript file is linked.")
+console.log("My JavaScript file is linked.");
 // Array of special characters to be included in password
 var specialCharacters = [
   '@',
@@ -95,11 +95,13 @@ function getPasswordOptions() {
 }
 
 // Function for getting a random element from an array
+// Should return a value
 function getRandom(arr) {
-
+return arr[Math.floor(Math.random()*arr.length)];
 }
 
 // Function to generate password with user input
+// Should return a value
 function generatePassword() {
 
 }
@@ -117,3 +119,13 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
+
+// User is prompted to choose how long to make the password, and which kind of elements to include
+
+var checkLength = prompt("How long do you want your password to be?");
+
+var confirmLower = confirm("Would you like to include lower case letters?");
+
+var confirmUpper = confirm("Would you like to include upper case letters?");
+
+var confirmSpecial = confirm("Would you like to include special characters?");
