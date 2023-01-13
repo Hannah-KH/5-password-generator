@@ -132,6 +132,8 @@ if (confirmLength < 10){
   var confirmLength = prompt("How long do you want your password to be?");
 };
 
+var confirmNumber = confirm("Would you like to include numbers?");
+
 var confirmLower = confirm("Would you like to include lower case letters?");
 
 var confirmUpper = confirm("Would you like to include upper case letters?");
