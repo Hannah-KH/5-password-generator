@@ -122,10 +122,20 @@ generateBtn.addEventListener('click', writePassword);
 
 // User is prompted to choose how long to make the password, and which kind of elements to include
 
-var checkLength = prompt("How long do you want your password to be?");
+var confirmLength = prompt("How long do you want your password to be?");
+
+if (confirmLength < 10){
+  alert("Password must be 10 characters or more.");
+  var confirmLength = prompt("How long do you want your password to be?");
+} else if (confirmLength > 64){
+  alert("Password must be 64 characters or fewer.");
+  var confirmLength = prompt("How long do you want your password to be?");
+};
 
 var confirmLower = confirm("Would you like to include lower case letters?");
 
 var confirmUpper = confirm("Would you like to include upper case letters?");
 
 var confirmSpecial = confirm("Would you like to include special characters?");
+
+
