@@ -95,8 +95,8 @@ function getPasswordOptions() {
   let confirmLength = parseInt(
     prompt("How long do you want your password to be?")
     )
- // This is not working at the moment
-   if(isNaN(confirmLength === true)){
+
+   if(isNaN(confirmLength) === true){
    alert("Password length must only include digits 0 to 9.");
     return;
    }
@@ -140,7 +140,7 @@ function getPasswordOptions() {
         confirmSpecial: confirmSpecial
       }
 
-      console.log(passwordOptions);
+     // console.log(passwordOptions);
 
 }
 
@@ -158,6 +158,23 @@ return randomElement;
 // Should return a value
 function generatePassword() {
 let options = getPasswordOptions();
+console.log(options);
+let result = []
+
+
+let possibleCharacters = []
+
+
+let guaranteedCharacters = []
+
+if(passwordOptions.confirmSpecial) {
+  possibleCharacters= possibleCharacters.concat(specialCharacters);
+  guaranteedCharacters.push(getRandom(specialCharacters))
+}
+
+console.log(possibleCharacters);
+console.log(guaranteedCharacters);
+
 }
 
 // Get references to the #generate element
