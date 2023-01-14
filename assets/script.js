@@ -200,6 +200,12 @@ if(options.confirmSpecial) {
 console.log(possibleCharacters);
 console.log(guaranteedCharacters);
 
+for(index = 0; index < options.confirmLength; index++){
+  var generated = getRandom(possibleCharacters);
+  result.push(generated);
+}
+
+console.log(result);
 }
 
 // Get references to the #generate element
