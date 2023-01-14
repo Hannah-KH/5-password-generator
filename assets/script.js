@@ -128,7 +128,7 @@ function getPasswordOptions() {
       confirmLower === false &&
       confirmUpper === false &&
       confirmSpecial === false){
-        alert("You must select at least one type of character.\n\nSelect Generate password to start again.");
+        alert("You must select at least one type of character.\n\nSelect 'Generate password' to start again.");
         return;
       }
 
@@ -140,7 +140,8 @@ function getPasswordOptions() {
         confirmSpecial: confirmSpecial
       }
 
-     // console.log(passwordOptions);
+     //console.log(passwordOptions);
+     return passwordOptions;
 
 }
 
@@ -167,8 +168,16 @@ let possibleCharacters = []
 
 let guaranteedCharacters = []
 
-if(passwordOptions.confirmSpecial) {
-  possibleCharacters= possibleCharacters.concat(specialCharacters);
+if(options.confirmNumber) {
+  possibleCharacters = possibleCharacters.concat(numericCharacters);
+  guaranteedCharacters.push(getRandom(numericCharacters))
+}
+
+console.log(possibleCharacters);
+console.log(guaranteedCharacters);
+
+if(options.confirmSpecial) {
+  possibleCharacters = possibleCharacters.concat(specialCharacters);
   guaranteedCharacters.push(getRandom(specialCharacters))
 }
 
