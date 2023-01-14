@@ -102,7 +102,7 @@ function getPasswordOptions() {
    }
     
     if (confirmLength < 10 || confirmLength > 64){
-      alert("Password must between 10 and 64 characters. n\nSelect 'Generate password' to start again.");
+      alert("Password must between 10 and 64 characters. \n\nSelect 'Generate password' to start again.");
       return;
     }
       /*
