@@ -167,7 +167,7 @@ let possibleCharacters = []
 
 
 let guaranteedCharacters = []
-
+// If the user selects numeric characters, this chooses random numbers from the numbers array
 if(options.confirmNumber) {
   possibleCharacters = possibleCharacters.concat(numericCharacters);
   guaranteedCharacters.push(getRandom(numericCharacters))
@@ -175,7 +175,7 @@ if(options.confirmNumber) {
 
 console.log(possibleCharacters);
 console.log(guaranteedCharacters);
-
+// If the user selects lower cased characters, this chooses random letters from the lower cased characters array
 if(options.confirmLower) {
   possibleCharacters = possibleCharacters.concat(lowerCasedCharacters);
   guaranteedCharacters.push(getRandom(lowerCasedCharacters))
@@ -183,7 +183,7 @@ if(options.confirmLower) {
 
 console.log(possibleCharacters);
 console.log(guaranteedCharacters);
-
+// If the user selects upper cased characters, this chooses random letters from the upper cased characters array
 if(options.confirmUpper) {
   possibleCharacters = possibleCharacters.concat(lowerCasedCharacters);
   guaranteedCharacters.push(getRandom(upperCasedCharacters))
@@ -191,7 +191,7 @@ if(options.confirmUpper) {
 
 console.log(possibleCharacters);
 console.log(guaranteedCharacters);
-
+// If the user selects special characters, this chooses random characters from the special characters array
 if(options.confirmSpecial) {
   possibleCharacters = possibleCharacters.concat(specialCharacters);
   guaranteedCharacters.push(getRandom(specialCharacters))
