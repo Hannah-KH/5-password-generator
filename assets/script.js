@@ -100,17 +100,19 @@ function getPasswordOptions() {
    alert("Password length must only include digits 0 to 9.");
     return;
    }
-    // At the moment, user can enter a number < 10, alerts pops up, then they can enter a number > 64, no alert pops up and they continue with the other prompts (same happens if entering bigger number first)
-    if (confirmLength < 10){
-      alert("Password must be 10 characters or more.");
-      prompt("How long do you want your password to be?");
+    
+    if (confirmLength < 10 || confirmLength > 64){
+      alert("Password must between 10 and 64 characters. n\nSelect 'Generate password' to start again.");
+      return;
+    }
+      /*
     } else if (confirmLength > 64){
       alert("Password must be 64 characters or fewer.");
-      prompt("How long do you want your password to be?");
+      return;
     } else if (confirmLength < 10){
       alert("Password must be 10 characters or more.");
       prompt("How long do you want your password to be?");
-    }
+    }*/
   
     let confirmNumber = 
     confirm("Would you like to include numbers?");
@@ -198,13 +200,16 @@ if(options.confirmSpecial) {
 console.log(possibleCharacters);
 console.log(guaranteedCharacters);
 
-// Does not seem to return character types based on user input
+
 for(index = 0; index < options.confirmLength; index++){
   var generated = getRandom(possibleCharacters);
   result.push(generated);
 }
 
-console.log(result);
+for(index = 0; index < guaranteedCharacters.length; index++){
+  result[index] = guaranteedCharacters[index];
+}
+
 // Returns result onscreen
 return result.join("");
 }
