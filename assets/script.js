@@ -162,9 +162,7 @@ let options = getPasswordOptions();
 console.log(options);
 let result = []
 
-
 let possibleCharacters = []
-
 
 let guaranteedCharacters = []
 // If the user selects numeric characters, this chooses random numbers from the numbers array
@@ -200,12 +198,15 @@ if(options.confirmSpecial) {
 console.log(possibleCharacters);
 console.log(guaranteedCharacters);
 
+// Does not seem to return character types based on user input
 for(index = 0; index < options.confirmLength; index++){
   var generated = getRandom(possibleCharacters);
   result.push(generated);
 }
 
 console.log(result);
+// Returns result onscreen
+return result.join("");
 }
 
 // Get references to the #generate element
