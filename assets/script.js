@@ -176,6 +176,22 @@ if(options.confirmNumber) {
 console.log(possibleCharacters);
 console.log(guaranteedCharacters);
 
+if(options.confirmLower) {
+  possibleCharacters = possibleCharacters.concat(lowerCasedCharacters);
+  guaranteedCharacters.push(getRandom(lowerCasedCharacters))
+}
+
+console.log(possibleCharacters);
+console.log(guaranteedCharacters);
+
+if(options.confirmUpper) {
+  possibleCharacters = possibleCharacters.concat(lowerCasedCharacters);
+  guaranteedCharacters.push(getRandom(upperCasedCharacters))
+}
+
+console.log(possibleCharacters);
+console.log(guaranteedCharacters);
+
 if(options.confirmSpecial) {
   possibleCharacters = possibleCharacters.concat(specialCharacters);
   guaranteedCharacters.push(getRandom(specialCharacters))
